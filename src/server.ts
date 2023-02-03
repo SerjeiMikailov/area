@@ -1,14 +1,7 @@
-import express, {Request, response, Response} from 'express';
+import express, {Request, Response} from 'express';
+import mainroutes from './routes/index'
 
 const server = express()
-
 server.listen(1919)
 
-server.get('/', (req: Request, res: Response)=> {
-    res.send('kkkkkk')
-}) 
-
-server.get('/mainpage/:slug', (req: Request, res: Response)=> {
-    let slug: string =  req.params.slug;
-    res.send(`Coisa tal ${slug}`)
-}) 
+server.use(mainroutes)
