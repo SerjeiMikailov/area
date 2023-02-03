@@ -5,6 +5,9 @@ const router = (0, express_1.Router)();
 router.get('/', (req, res) => {
     res.send('kkkkkk');
 });
+router.get('/mainpage', (req, res) => {
+    res.send('Main Page');
+});
 router.get('/mainpage/:slug', (req, res) => {
     let slug = req.params.slug;
     res.send(`Coisa tal ${slug}`);
