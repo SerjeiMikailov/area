@@ -1,0 +1,24 @@
+{
+  "name": "area",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js",
+    "watch-ts": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SerjeiMikailov/area.git"
+  },
+  "author": "serj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SerjeiMikailov/area/issues"
+  },
+  "homepage": "https://github.com/SerjeiMikailov/area#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.18"
+  }
+}
