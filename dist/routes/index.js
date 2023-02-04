@@ -3,13 +3,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const router = (0, express_1.Router)();
 router.get('/', (req, res) => {
-    res.render('home');
+    res.render('home', {
+        showlist: [
+            { title: 'P1', price: 15 },
+            { title: 'P2', price: 90 }
+        ]
+    });
 });
-router.get('/mainpage', (req, res) => {
-    res.send('Main Page');
+router.get('/contact', (req, res) => {
+    res.render('contact');
 });
-router.get('/mainpage/:slug', (req, res) => {
-    let slug = req.params.slug;
-    res.send(`Coisa tal ${slug}`);
+router.get('/contact/about', (req, res) => {
+    res.render('about.mustache');
 });
 exports.default = router;

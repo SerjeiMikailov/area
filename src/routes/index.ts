@@ -1,19 +1,25 @@
 import {Router} from 'express';
 import express, {Request, Response} from 'express';
+import { title } from 'process';
 
 const router = Router()
 
 router.get('/', (req: Request, res: Response)=> {
-    res.render('home');
+    res.render('home', {
+
+        showlist: [
+            {title: 'P1', price: 15},
+            {title: 'P2', price: 90}
+        ]
+    });
 }) 
 
-router.get('/mainpage', (req: Request, res: Response)=> {
-    res.send('Main Page')
+router.get('/contact', (req: Request, res: Response)=> {
+    res.render('contact');
 }) 
 
-router.get('/mainpage/:slug', (req: Request, res: Response)=> {
-    let slug: string =  req.params.slug;
-    res.send(`Coisa tal ${slug}`)
+router.get('/contact/about', (req: Request, res: Response)=> {
+    res.render('about.mustache')
 }) 
 
 export default router;
