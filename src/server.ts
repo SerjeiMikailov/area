@@ -1,9 +1,15 @@
 import express, {Request, Response} from 'express';
 import path from 'path';
+import mustache from 'mustache-express'
+
 import mainroutes from './routes/index'
 import panelroutes from './routes/panel'
 
 const server = express()
+
+server.set('view engine', 'mustache')
+server.set('views', path.join(__dirname, 'views'))
+server.engine('mustache', mustache())
 
 server.use(express.static(path.join(__dirname, '../public')))
 
