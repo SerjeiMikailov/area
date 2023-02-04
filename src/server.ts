@@ -5,7 +5,7 @@ import panelroutes from './routes/panel'
 
 const server = express()
 
-server.use(express.static('public'))
+server.use(express.static(path.join(__dirname, '../public')))
 
 server.use(mainroutes)
 
