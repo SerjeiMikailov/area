@@ -12,8 +12,8 @@ const server = (0, express_1.default)();
 server.set('view engine', 'mustache');
 server.set('views', path_1.default.join(__dirname, 'views'));
 server.engine('mustache', (0, mustache_express_1.default)());
-server.use(express_1.default.static(path_1.default.join(__dirname, '../public')));
 server.use(index_1.default);
+server.use(express_1.default.static(path_1.default.join(__dirname, '../public')));
 server.use('/panel', (panel_1.default));
 server.use((req, res) => {
     res.status(404).send('Error 404 - Page not found');
