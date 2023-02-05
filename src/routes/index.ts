@@ -23,15 +23,19 @@ router.get('/contact/about', (req: Request, res: Response)=> {
 }) 
 
 router.get('/name', (req: Request, res: Response)=> {
-    let nome: string = req.query.nome as string;
-    let sobrenome: string = req.query.sobrenome as string;
-    let idade: string = req.query.idade as string;
+
+    res.render('name.mustache')
+}) 
+router.post('/name', (req: Request, res: Response)=> {
+    let nome: string = req.body.nome as string;
+    let sobrenome: string = req.body.sobrenome as string;
+    let idade: string = req.body.idade as string;
 
     res.render('name.mustache', {
         nome,
         sobrenome,
         idade
     });
-}) 
+})
 
 export default router;

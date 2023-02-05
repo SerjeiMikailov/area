@@ -17,9 +17,12 @@ router.get('/contact/about', (req, res) => {
     res.render('about.mustache');
 });
 router.get('/name', (req, res) => {
-    let nome = req.query.nome;
-    let sobrenome = req.query.sobrenome;
-    let idade = req.query.idade;
+    res.render('name.mustache');
+});
+router.post('/name', (req, res) => {
+    let nome = req.body.nome;
+    let sobrenome = req.body.sobrenome;
+    let idade = req.body.idade;
     res.render('name.mustache', {
         nome,
         sobrenome,
