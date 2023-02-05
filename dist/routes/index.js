@@ -16,4 +16,8 @@ router.get('/contact', (req, res) => {
 router.get('/contact/about', (req, res) => {
     res.render('about.mustache');
 });
+router.get('/name', (req, res) => {
+    let nome = req.query.nome;
+    res.render('name.mustache');
+});
 exports.default = router;

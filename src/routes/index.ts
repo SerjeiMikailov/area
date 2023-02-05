@@ -22,4 +22,10 @@ router.get('/contact/about', (req: Request, res: Response)=> {
     res.render('about.mustache')
 }) 
 
+router.get('/name', (req: Request, res: Response)=> {
+    let nome: string = req.query.nome as string;
+
+    res.render('name.mustache');
+}) 
+
 export default router;
