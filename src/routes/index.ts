@@ -24,8 +24,14 @@ router.get('/contact/about', (req: Request, res: Response)=> {
 
 router.get('/name', (req: Request, res: Response)=> {
     let nome: string = req.query.nome as string;
+    let sobrenome: string = req.query.sobrenome as string;
+    let idade: string = req.query.idade as string;
 
-    res.render('name.mustache');
+    res.render('name.mustache', {
+        nome,
+        sobrenome,
+        idade
+    });
 }) 
 
 export default router;

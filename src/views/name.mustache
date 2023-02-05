@@ -11,9 +11,23 @@
 
         <form method="get">
             <input placeholder="Digite o seu nome" name="nome" type="text"/>
+            <br/>
+            <input placeholder="Seu Sobrenome" name="sobrenome" type="text"/>
+            <br/>
+            <input placeholder="Sua Idade" name="idade" type="number"/>
+            <br/>
             <input type="submit" value="Enviar"/>
         </form>
     <hr/>
+    {{#nome}}
+     <h3>Opa {{nome}}, Tranquilo?</h3>
+    {{/nome}}
+    {{#sobrenome}}
+     <h3>Então seu  sobrenome é {{sobrenome}}?</h3>
+    {{/sobrenome}}
+    {{#idade}}
+     <h3>E a sua idade é {{idade}}?</h3>
+    {{/idade}}
 </body>
 
 {{>partials/footer}}
