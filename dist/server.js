@@ -6,8 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const mustache_express_1 = __importDefault(require("mustache-express"));
+const dotenv_1 = __importDefault(require("dotenv"));
 const index_1 = __importDefault(require("./routes/index"));
 const panel_1 = __importDefault(require("./routes/panel"));
+dotenv_1.default.config();
 const server = (0, express_1.default)();
 server.set('view engine', 'mustache');
 server.set('views', path_1.default.join(__dirname, 'views'));
@@ -19,4 +21,4 @@ server.use('/panel', (panel_1.default));
 server.use((req, res) => {
     res.status(404).send('Error 404 - Page not found');
 });
-server.listen(1919);
+server.listen(process.env.PORT);

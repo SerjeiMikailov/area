@@ -1,9 +1,12 @@
 import express, {Request, Response} from 'express';
 import path from 'path';
-import mustache from 'mustache-express'
+import mustache from 'mustache-express';
+import dotenv from 'dotenv';
 
-import mainroutes from './routes/index'
-import panelroutes from './routes/panel'
+import mainroutes from './routes/index';
+import panelroutes from './routes/panel';
+
+dotenv.config();
 
 const server = express()
 
@@ -23,4 +26,4 @@ server.use((req: Request, res: Response)=> {
     res.status(404).send('Error 404 - Page not found')
 })
 
-server.listen(1919)
+server.listen(process.env.PORT)
